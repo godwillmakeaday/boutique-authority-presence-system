@@ -73,10 +73,10 @@ export function PlaceholderPanel({ label, tall = false, accent = "gold", variant
         <div className="absolute left-5 top-6 h-16 w-px bg-champagne/30 sm:left-7 sm:top-7 sm:h-24" />
         <div className="absolute right-5 top-6 h-16 w-px bg-cream/18 sm:right-7 sm:top-7 sm:h-24" />
         <div className={`absolute border border-cream/18 bg-ink/16 shadow-[inset_0_0_50px_rgba(255,248,236,0.05)] transition duration-500 group-hover:scale-[1.03] ${mood.hero}`} />
-        <div className={`absolute border border-champagne/23 bg-cream/[0.045] ${mood.secondary}`} />
-        <div className={`absolute border border-blush/25 bg-ink/22 ${mood.detail}`} />
-        <div className={`absolute bg-cream/12 ${mood.line}`} />
-        <div className="relative z-10 w-full border-t border-cream/15 bg-ink/22 p-3 backdrop-blur-sm sm:p-4">
+        <div className={`absolute z-[1] border border-champagne/23 bg-cream/[0.045] ${mood.secondary}`} />
+        <div className={`absolute z-[1] border border-blush/25 bg-ink/22 ${mood.detail}`} />
+        <div className={`absolute z-[1] bg-cream/12 ${mood.line}`} />
+        <div className="relative z-20 w-full border-t border-cream/15 bg-ink/45 p-3 backdrop-blur-sm sm:p-4">
           <p className="museum-label text-[0.55rem] text-champagne/75 sm:text-[0.63rem]">Lookbook visual</p>
           <p className="mt-1.5 font-display text-xl font-semibold text-pearl sm:mt-2 sm:text-2xl">{label}</p>
           {caption ? <p className="mt-1.5 text-xs leading-5 text-cream/62 sm:mt-2 sm:text-sm sm:leading-6">{caption}</p> : null}
