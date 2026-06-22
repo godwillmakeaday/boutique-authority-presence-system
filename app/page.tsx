@@ -96,17 +96,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="reveal-up delay-150 relative min-h-[520px] sm:min-h-[630px] lg:min-h-[760px]">
-          <div className="absolute left-1 top-0 z-20 rounded-full border border-champagne/25 bg-ink/70 px-3 py-2 text-[0.58rem] uppercase tracking-[0.18em] text-champagne shadow-card backdrop-blur sm:left-0 sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.22em]">
+        <div className="reveal-up delay-150 relative grid min-h-0 gap-4 sm:block sm:min-h-[630px] lg:min-h-[760px]">
+          <div className="relative z-20 w-fit rounded-full border border-champagne/25 bg-ink/70 px-3 py-2 text-[0.58rem] uppercase tracking-[0.18em] text-champagne shadow-card backdrop-blur sm:absolute sm:left-0 sm:top-0 sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.22em]">
             Curated retail presence
           </div>
-          <div className="absolute right-0 top-9 z-10 w-[86%] max-w-[35rem] sm:top-12 sm:w-[78%]">
-            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" variant="arch" caption="A hero image area for campaign photography, premium fabric, and the boutique's editorial mood." />
-          </div>
-          <div className="absolute left-0 top-24 z-20 w-[44%] max-w-[19rem] rotate-[-3deg] sm:top-36 sm:w-[48%]">
-            <PlaceholderPanel label="Accessories Finish" accent="blush" variant="detail" caption="Jewelry, bags, scarves, and styling bundles presented as finishing decisions." />
-          </div>
-          <div className="luxury-border absolute bottom-20 left-2 z-30 max-w-[15.7rem] rounded-[1.55rem] bg-ink/78 p-4 shadow-editorial backdrop-blur sm:bottom-16 sm:left-6 sm:max-w-[18rem] sm:rounded-[1.7rem] sm:p-5">
+
+          <div className="luxury-border relative z-30 w-full rounded-[1.55rem] bg-ink/78 p-4 shadow-editorial backdrop-blur sm:absolute sm:bottom-16 sm:left-6 sm:max-w-[18rem] sm:rounded-[1.7rem] sm:p-5">
             <p className="museum-label text-[0.58rem] text-blush/80">Curated retail status</p>
             <p className="mt-2 font-display text-2xl leading-none text-pearl sm:mt-3 sm:text-3xl">Premium store presence</p>
             <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5">
@@ -117,7 +112,8 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="luxury-border absolute bottom-0 left-0 z-30 max-w-[15.5rem] rounded-[1.55rem] bg-espresso/86 p-4 shadow-editorial backdrop-blur sm:left-auto sm:right-3 sm:max-w-[17rem] sm:rounded-[1.8rem] sm:p-5">
+
+          <div className="luxury-border relative z-30 w-full rounded-[1.55rem] bg-espresso/86 p-4 shadow-editorial backdrop-blur sm:absolute sm:bottom-0 sm:right-3 sm:max-w-[17rem] sm:rounded-[1.8rem] sm:p-5">
             <div className="flex items-center justify-between gap-4">
               <p className="museum-label text-[0.58rem] text-champagne/75">New arrival cue</p>
               <span className="rounded-full border border-champagne/25 px-3 py-1 text-[0.58rem] uppercase tracking-[0.18em] text-champagne">Live</span>
@@ -127,6 +123,14 @@ export default function Home() {
             <a href="https://wa.me/2340000000000" className="focus-ring mt-3 inline-flex rounded-full bg-champagne px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-pearl sm:mt-4 sm:text-xs sm:tracking-[0.16em]">
               Ask on WhatsApp
             </a>
+          </div>
+
+          <div className="relative z-10 w-full sm:absolute sm:right-0 sm:top-12 sm:w-[78%] sm:max-w-[35rem]">
+            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" variant="arch" caption="A hero image area for campaign photography, premium fabric, and the boutique's editorial mood." />
+          </div>
+
+          <div className="hidden sm:absolute sm:left-0 sm:top-36 sm:z-20 sm:block sm:w-[48%] sm:max-w-[19rem] sm:rotate-[-3deg]">
+            <PlaceholderPanel label="Accessories Finish" accent="blush" variant="detail" caption="Jewelry, bags, scarves, and styling bundles presented as finishing decisions." />
           </div>
         </div>
       </section>
