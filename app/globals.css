@@ -145,3 +145,9 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 1.5rem;
+  }
+}

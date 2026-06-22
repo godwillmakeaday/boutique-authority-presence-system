@@ -21,7 +21,7 @@ export function Button({ href, children, variant = "primary", className = "" }: 
   return (
     <Link
       href={href}
-      className={`focus-ring group inline-flex items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 ${variants[variant]} ${className}`}
+      className={`focus-ring group inline-flex items-center justify-center gap-3 rounded-full px-5 py-3 text-sm font-semibold transition duration-300 sm:px-6 ${variants[variant]} ${className}`}
     >
       <span>{children}</span>
       <span aria-hidden="true" className="transition duration-300 group-hover:translate-x-1">

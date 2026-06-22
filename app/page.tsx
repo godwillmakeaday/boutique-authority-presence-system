@@ -29,6 +29,7 @@ const heroStats = [
 ];
 
 const heroMicroItems = ["New arrivals", "Size guidance", "Delivery clarity", "WhatsApp order"];
+const lookbookPanelVariants = ["arch", "rail", "mirror", "detail", "arch"] as const;
 
 export default function Home() {
   return (
@@ -38,7 +39,7 @@ export default function Home() {
       <div className="pointer-events-none absolute -left-40 top-[42rem] z-0 h-[38rem] w-[38rem] rounded-full bg-oxblood/40 blur-3xl" />
 
       <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
-        <a href="#top" className="focus-ring group flex items-center gap-3 rounded-full">
+        <a href="#hero" className="focus-ring group flex items-center gap-3 rounded-full">
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-champagne/30 bg-cream/8 font-display text-xl text-champagne shadow-insetLux transition group-hover:border-champagne/55">
             B
           </span>
@@ -54,79 +55,79 @@ export default function Home() {
           <a className="transition hover:text-champagne" href="#order">Order</a>
         </nav>
         <a
-          href="#preview"
+          href="#contact"
           className="focus-ring rounded-full border border-champagne/35 bg-cream/[0.035] px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-champagne transition hover:bg-champagne hover:text-ink"
         >
           Request Preview
         </a>
       </header>
 
-      <section id="top" className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-10 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:pb-32 lg:pt-14">
+      <section id="hero" className="relative z-10 mx-auto grid max-w-7xl scroll-mt-8 items-start gap-8 px-5 pb-14 pt-5 sm:px-8 sm:pb-20 sm:pt-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-12 lg:pb-28 lg:pt-14">
         <div className="relative">
-          <div className="mb-7 flex flex-wrap items-center gap-3">
+          <div className="mb-5 flex flex-wrap items-center gap-3 sm:mb-7">
             <p className="inline-flex rounded-full border border-champagne/25 bg-cream/8 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-couture text-champagne/85 shadow-insetLux">
               Premium retail identity system
             </p>
             <p className="hidden text-xs uppercase tracking-[0.24em] text-cream/42 sm:block">Fashion • Trust • Order</p>
           </div>
-          <p className="museum-label mb-5 text-[0.62rem] text-blush/70">Campaign home / collection gateway / buying concierge</p>
-          <h1 className="text-balance font-display text-6xl font-semibold leading-[0.84] tracking-[-0.06em] text-pearl sm:text-7xl lg:text-[7.35rem]">
+          <p className="museum-label mb-4 text-[0.58rem] leading-5 text-blush/70 sm:mb-5 sm:text-[0.62rem]">Campaign home / collection gateway / buying concierge</p>
+          <h1 className="text-balance font-display text-[3.45rem] font-semibold leading-[0.86] tracking-[-0.055em] text-pearl sm:text-7xl sm:leading-[0.84] lg:text-[7.35rem]">
             Turn Your Boutique Into a Premium Style Destination
           </h1>
-          <p className="mt-8 max-w-2xl text-lg leading-8 text-cream/72 sm:text-xl">
+          <p className="mt-6 max-w-2xl text-base leading-7 text-cream/72 sm:mt-8 sm:text-xl sm:leading-8">
             A premium website and business identity system for boutiques that want stronger product presentation,
             clearer brand positioning, and better customer inquiries.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Button href="#preview">Request a Boutique Presence Review</Button>
             <Button href="#system" variant="secondary">See the Style System</Button>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-3 border-y border-cream/10 py-5 sm:max-w-2xl sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-3 gap-2 border-y border-cream/10 py-4 sm:mt-12 sm:max-w-2xl sm:gap-3 sm:py-5">
             {heroStats.map(([label, detail]) => (
-              <div className="rounded-2xl bg-cream/[0.035] p-4 text-left shadow-insetLux" key={label}>
-                <p className="font-display text-3xl text-champagne">{label}</p>
-                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-cream/45">{detail}</p>
+              <div className="rounded-2xl bg-cream/[0.035] p-3 text-left shadow-insetLux sm:p-4" key={label}>
+                <p className="font-display text-2xl leading-none text-champagne sm:text-3xl">{label}</p>
+                <p className="mt-1 text-[0.55rem] uppercase leading-4 tracking-[0.14em] text-cream/45 sm:text-xs sm:tracking-[0.18em]">{detail}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="relative min-h-[720px] lg:min-h-[760px]">
-          <div className="absolute left-0 top-0 z-20 rounded-full border border-champagne/25 bg-ink/70 px-5 py-3 text-xs uppercase tracking-[0.22em] text-champagne shadow-card backdrop-blur">
+        <div className="relative min-h-[520px] sm:min-h-[630px] lg:min-h-[760px]">
+          <div className="absolute left-1 top-0 z-20 rounded-full border border-champagne/25 bg-ink/70 px-3 py-2 text-[0.58rem] uppercase tracking-[0.18em] text-champagne shadow-card backdrop-blur sm:left-0 sm:px-5 sm:py-3 sm:text-xs sm:tracking-[0.22em]">
             Curated retail presence
           </div>
-          <div className="absolute right-0 top-12 z-10 w-[78%] max-w-[35rem]">
-            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" caption="A hero image area for campaign photography, premium fabric, and the boutique's editorial mood." />
+          <div className="absolute right-0 top-9 z-10 w-[86%] max-w-[35rem] sm:top-12 sm:w-[78%]">
+            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" variant="arch" caption="A hero image area for campaign photography, premium fabric, and the boutique's editorial mood." />
           </div>
-          <div className="absolute left-0 top-36 z-20 w-[48%] max-w-[19rem] rotate-[-3deg]">
-            <PlaceholderPanel label="Accessories Finish" accent="blush" caption="Jewelry, bags, scarves, and styling bundles presented as finishing decisions." />
+          <div className="absolute left-0 top-24 z-20 w-[44%] max-w-[19rem] rotate-[-3deg] sm:top-36 sm:w-[48%]">
+            <PlaceholderPanel label="Accessories Finish" accent="blush" variant="detail" caption="Jewelry, bags, scarves, and styling bundles presented as finishing decisions." />
           </div>
-          <div className="luxury-border absolute bottom-16 left-6 z-30 max-w-[18rem] rounded-[1.7rem] bg-ink/78 p-5 shadow-editorial backdrop-blur">
+          <div className="luxury-border absolute bottom-20 left-2 z-30 max-w-[15.7rem] rounded-[1.55rem] bg-ink/78 p-4 shadow-editorial backdrop-blur sm:bottom-16 sm:left-6 sm:max-w-[18rem] sm:rounded-[1.7rem] sm:p-5">
             <p className="museum-label text-[0.58rem] text-blush/80">Curated retail status</p>
-            <p className="mt-3 font-display text-3xl leading-none text-pearl">Premium store presence</p>
-            <div className="mt-5 grid grid-cols-2 gap-2">
+            <p className="mt-2 font-display text-2xl leading-none text-pearl sm:mt-3 sm:text-3xl">Premium store presence</p>
+            <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-5">
               {heroMicroItems.map((item) => (
-                <span className="rounded-full border border-cream/12 bg-cream/[0.055] px-3 py-2 text-[0.64rem] uppercase tracking-[0.12em] text-cream/62" key={item}>
+                <span className="rounded-full border border-cream/12 bg-cream/[0.055] px-2.5 py-1.5 text-[0.55rem] uppercase leading-4 tracking-[0.1em] text-cream/62 sm:px-3 sm:py-2 sm:text-[0.64rem] sm:tracking-[0.12em]" key={item}>
                   {item}
                 </span>
               ))}
             </div>
           </div>
-          <div className="luxury-border absolute bottom-0 right-3 z-30 max-w-[17rem] rounded-[1.8rem] bg-espresso/86 p-5 shadow-editorial backdrop-blur">
+          <div className="luxury-border absolute bottom-0 left-0 z-30 max-w-[15.5rem] rounded-[1.55rem] bg-espresso/86 p-4 shadow-editorial backdrop-blur sm:left-auto sm:right-3 sm:max-w-[17rem] sm:rounded-[1.8rem] sm:p-5">
             <div className="flex items-center justify-between gap-4">
               <p className="museum-label text-[0.58rem] text-champagne/75">New arrival cue</p>
               <span className="rounded-full border border-champagne/25 px-3 py-1 text-[0.58rem] uppercase tracking-[0.18em] text-champagne">Live</span>
             </div>
-            <p className="mt-3 font-display text-4xl text-pearl">₦45,000+</p>
-            <p className="mt-2 text-xs leading-5 text-cream/60">Price, fit note, size prompt, delivery clarity, and WhatsApp action inside the product card.</p>
-            <a href="https://wa.me/2340000000000" className="focus-ring mt-4 inline-flex rounded-full bg-champagne px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-pearl">
+            <p className="mt-2 font-display text-3xl text-pearl sm:mt-3 sm:text-4xl">₦45,000+</p>
+            <p className="mt-2 text-[0.72rem] leading-5 text-cream/60 sm:text-xs">Price, fit note, size prompt, delivery clarity, and WhatsApp action inside the product card.</p>
+            <a href="https://wa.me/2340000000000" className="focus-ring mt-3 inline-flex rounded-full bg-champagne px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-ink transition hover:bg-pearl sm:mt-4 sm:text-xs sm:tracking-[0.16em]">
               Ask on WhatsApp
             </a>
           </div>
         </div>
       </section>
 
-      <section className="relative z-10 border-y border-cream/10 bg-ink/48 px-5 py-24 sm:px-8">
+      <section id="problem" className="relative z-10 scroll-mt-10 border-y border-cream/10 bg-ink/48 px-5 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <SectionHeader
             label="The presentation problem"
@@ -144,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="system" className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+      <section id="system" className="relative z-10 mx-auto max-w-7xl scroll-mt-10 px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <SectionHeader
           label="The system"
           title="The Boutique Authority Presence System"
@@ -164,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="lookbook" className="relative z-10 bg-cream/[0.035] px-5 py-28 sm:px-8">
+      <section id="lookbook" className="relative z-10 scroll-mt-10 bg-cream/[0.035] px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <SectionHeader
@@ -181,7 +182,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-14 grid gap-5 lg:grid-cols-12">
+          <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 lg:grid-cols-12">
             {lookbookCards.map((card, index) => (
               <article
                 className={`group luxury-border overflow-hidden rounded-[2.25rem] bg-espresso/78 p-3 shadow-card transition duration-500 hover:-translate-y-2 hover:bg-cocoa hover:shadow-editorial ${
@@ -189,10 +190,10 @@ export default function Home() {
                 }`}
                 key={card.title}
               >
-                <PlaceholderPanel label={card.title} tall={index < 2} accent={card.accent} caption={card.occasion} />
-                <div className="px-3 pb-4 pt-5">
+                <PlaceholderPanel label={card.title} tall={index < 2} accent={card.accent} variant={lookbookPanelVariants[index]} caption={card.occasion} />
+                <div className="px-3 pb-4 pt-4 sm:pt-5">
                   <p className="museum-label text-[0.62rem] text-champagne/65">{card.occasion}</p>
-                  <h3 className="mt-3 font-display text-4xl leading-none tracking-[-0.03em] text-pearl">{card.title}</h3>
+                  <h3 className="mt-3 font-display text-3xl leading-none tracking-[-0.03em] text-pearl sm:text-4xl">{card.title}</h3>
                   <p className="mt-4 text-sm leading-6 text-cream/62">{card.note}</p>
                   <a href="#products" className="focus-ring mt-5 inline-flex rounded-full border border-champagne/30 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-champagne transition hover:bg-champagne hover:text-ink">
                     {card.cta}
@@ -204,7 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="products" className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+      <section id="products" className="relative z-10 mx-auto max-w-7xl scroll-mt-10 px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <SectionHeader
           label="Catalogue presentation"
           title="Product cards that feel like premium retail decisions, not social media captions."
@@ -218,7 +219,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+      <section id="pages" className="relative z-10 mx-auto max-w-7xl scroll-mt-10 px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <SectionHeader
           label="Pages included"
           title="A boutique presence that answers the questions customers ask before buying."
@@ -233,7 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="order" className="relative z-10 bg-ink/48 px-5 py-28 sm:px-8">
+      <section id="order" className="relative z-10 scroll-mt-10 bg-ink/48 px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <SectionHeader
@@ -260,7 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+      <section id="before-after" className="relative z-10 mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
           <SectionHeader
             label="Before / after"
@@ -271,7 +272,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="offer" className="relative z-10 bg-cream/[0.035] px-5 py-28 sm:px-8">
+      <section id="offer" className="relative z-10 scroll-mt-10 bg-cream/[0.035] px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
             <div>
@@ -296,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+      <section id="trust" className="relative z-10 mx-auto max-w-7xl scroll-mt-10 px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <SectionHeader
           label="Customer confidence"
           title="Reviews that support the sale before the conversation begins."
@@ -312,7 +313,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="preview" className="relative z-10 px-5 pb-28 sm:px-8">
+      <section id="contact" className="relative z-10 scroll-mt-10 px-5 pb-20 sm:px-8 sm:pb-28">
+        <span id="preview" className="block scroll-mt-10" />
         <div className="luxury-border fashion-grain mx-auto max-w-5xl overflow-hidden rounded-[2.8rem] bg-espresso/82 p-8 text-center shadow-editorial sm:p-12">
           <p className="museum-label text-[0.65rem] font-semibold text-champagne/75">Boutique Authority Presence System</p>
           <h2 className="mt-5 font-display text-5xl font-semibold tracking-[-0.04em] text-pearl sm:text-7xl">
@@ -323,7 +325,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Button href="mailto:hello@example.com?subject=Boutique%20Presence%20Review">Request a Preview</Button>
-            <Button href="#lookbook" variant="secondary">See the Style System</Button>
+            <Button href="#products" variant="secondary">See Product Cards</Button>
           </div>
         </div>
       </section>
