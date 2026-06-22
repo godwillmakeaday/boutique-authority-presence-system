@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import {
   collections,
   includedPages,
+  lookbookCards,
   placeholders,
   productCards,
   reviews,
@@ -27,11 +28,14 @@ const heroStats = [
   ["Mobile", "Order-ready pages"],
 ];
 
+const heroMicroItems = ["New arrivals", "Size guidance", "Delivery clarity", "WhatsApp order"];
+
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-luxury text-pearl">
       <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-[44rem] w-[44rem] -translate-x-1/2 rounded-full bg-champagne/10 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-1/4 z-0 h-[34rem] w-[34rem] rounded-full bg-blush/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-40 top-[42rem] z-0 h-[38rem] w-[38rem] rounded-full bg-oxblood/40 blur-3xl" />
 
       <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8">
         <a href="#top" className="focus-ring group flex items-center gap-3 rounded-full">
@@ -46,7 +50,7 @@ export default function Home() {
         <nav className="hidden items-center gap-7 text-sm text-cream/62 lg:flex">
           <a className="transition hover:text-champagne" href="#system">System</a>
           <a className="transition hover:text-champagne" href="#lookbook">Lookbook</a>
-          <a className="transition hover:text-champagne" href="#offer">Offer</a>
+          <a className="transition hover:text-champagne" href="#products">Products</a>
           <a className="transition hover:text-champagne" href="#order">Order</a>
         </nav>
         <a
@@ -57,15 +61,16 @@ export default function Home() {
         </a>
       </header>
 
-      <section id="top" className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-10 sm:px-8 lg:grid-cols-[0.94fr_1.06fr] lg:pb-32 lg:pt-14">
-        <div>
+      <section id="top" className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-5 pb-24 pt-10 sm:px-8 lg:grid-cols-[0.82fr_1.18fr] lg:pb-32 lg:pt-14">
+        <div className="relative">
           <div className="mb-7 flex flex-wrap items-center gap-3">
             <p className="inline-flex rounded-full border border-champagne/25 bg-cream/8 px-4 py-2 text-[0.65rem] font-semibold uppercase tracking-couture text-champagne/85 shadow-insetLux">
               Premium retail identity system
             </p>
             <p className="hidden text-xs uppercase tracking-[0.24em] text-cream/42 sm:block">Fashion • Trust • Order</p>
           </div>
-          <h1 className="text-balance font-display text-6xl font-semibold leading-[0.86] tracking-[-0.055em] text-pearl sm:text-7xl lg:text-[6.6rem]">
+          <p className="museum-label mb-5 text-[0.62rem] text-blush/70">Campaign home / collection gateway / buying concierge</p>
+          <h1 className="text-balance font-display text-6xl font-semibold leading-[0.84] tracking-[-0.06em] text-pearl sm:text-7xl lg:text-[7.35rem]">
             Turn Your Boutique Into a Premium Style Destination
           </h1>
           <p className="mt-8 max-w-2xl text-lg leading-8 text-cream/72 sm:text-xl">
@@ -86,26 +91,37 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute -left-5 top-8 z-20 hidden rounded-full border border-champagne/25 bg-ink/70 px-5 py-3 text-xs uppercase tracking-[0.22em] text-champagne shadow-card backdrop-blur md:block">
+        <div className="relative min-h-[720px] lg:min-h-[760px]">
+          <div className="absolute left-0 top-0 z-20 rounded-full border border-champagne/25 bg-ink/70 px-5 py-3 text-xs uppercase tracking-[0.22em] text-champagne shadow-card backdrop-blur">
             Curated retail presence
           </div>
-          <div className="grid gap-5 sm:grid-cols-[0.76fr_1.24fr]">
-            <div className="space-y-5 pt-10">
-              <PlaceholderPanel label="Accessories Edit" accent="blush" caption="Finishing pieces, gifts, styling bundles." />
-              <div className="luxury-border rounded-[1.9rem] bg-espresso/78 p-5 shadow-card">
-                <p className="museum-label text-[0.62rem] text-champagne/75">Buying clarity</p>
-                <p className="mt-3 font-display text-2xl leading-tight text-pearl">
-                  Sizes, delivery, payment and WhatsApp order guidance visible before inquiry.
-                </p>
-              </div>
-            </div>
-            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" caption="A visual store atmosphere for style, occasion, and identity." />
+          <div className="absolute right-0 top-12 z-10 w-[78%] max-w-[35rem]">
+            <PlaceholderPanel label="Signature Lookbook" tall accent="gold" caption="A hero image area for campaign photography, premium fabric, and the boutique's editorial mood." />
           </div>
-          <div className="luxury-border absolute bottom-8 right-3 z-20 hidden max-w-[15rem] rounded-[1.6rem] bg-ink/72 p-4 shadow-editorial backdrop-blur lg:block">
-            <p className="museum-label text-[0.58rem] text-blush/80">New arrival cue</p>
-            <p className="mt-2 font-display text-2xl text-pearl">₦45,000+</p>
-            <p className="mt-2 text-xs leading-5 text-cream/60">WhatsApp-ready card with price, fit note, size prompt, and delivery clarity.</p>
+          <div className="absolute left-0 top-36 z-20 w-[48%] max-w-[19rem] rotate-[-3deg]">
+            <PlaceholderPanel label="Accessories Finish" accent="blush" caption="Jewelry, bags, scarves, and styling bundles presented as finishing decisions." />
+          </div>
+          <div className="luxury-border absolute bottom-16 left-6 z-30 max-w-[18rem] rounded-[1.7rem] bg-ink/78 p-5 shadow-editorial backdrop-blur">
+            <p className="museum-label text-[0.58rem] text-blush/80">Curated retail status</p>
+            <p className="mt-3 font-display text-3xl leading-none text-pearl">Premium store presence</p>
+            <div className="mt-5 grid grid-cols-2 gap-2">
+              {heroMicroItems.map((item) => (
+                <span className="rounded-full border border-cream/12 bg-cream/[0.055] px-3 py-2 text-[0.64rem] uppercase tracking-[0.12em] text-cream/62" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="luxury-border absolute bottom-0 right-3 z-30 max-w-[17rem] rounded-[1.8rem] bg-espresso/86 p-5 shadow-editorial backdrop-blur">
+            <div className="flex items-center justify-between gap-4">
+              <p className="museum-label text-[0.58rem] text-champagne/75">New arrival cue</p>
+              <span className="rounded-full border border-champagne/25 px-3 py-1 text-[0.58rem] uppercase tracking-[0.18em] text-champagne">Live</span>
+            </div>
+            <p className="mt-3 font-display text-4xl text-pearl">₦45,000+</p>
+            <p className="mt-2 text-xs leading-5 text-cream/60">Price, fit note, size prompt, delivery clarity, and WhatsApp action inside the product card.</p>
+            <a href="https://wa.me/2340000000000" className="focus-ring mt-4 inline-flex rounded-full bg-champagne px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-pearl">
+              Ask on WhatsApp
+            </a>
           </div>
         </div>
       </section>
@@ -150,11 +166,11 @@ export default function Home() {
 
       <section id="lookbook" className="relative z-10 bg-cream/[0.035] px-5 py-28 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <SectionHeader
-              label="Trust and taste"
-              title="Fashion is presentation, confidence, and trust."
-              description="The system gives every boutique the structure to show taste, explain fit, prove reliability, and guide customers into an easy order conversation."
+              label="Editorial lookbook"
+              title="A boutique should not show products alone. It should show occasions, identity, and taste."
+              description="Prompt 2 upgrades the lookbook into a campaign-style section with strong visual placeholders, occasion language, styling notes, and clear customer action."
             />
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               {trustElements.map((item) => (
@@ -164,11 +180,41 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {productCards.map((product, index) => (
-              <ProductCard key={product.name} {...product} index={index + 1} />
+
+          <div className="mt-14 grid gap-5 lg:grid-cols-12">
+            {lookbookCards.map((card, index) => (
+              <article
+                className={`group luxury-border overflow-hidden rounded-[2.25rem] bg-espresso/78 p-3 shadow-card transition duration-500 hover:-translate-y-2 hover:bg-cocoa hover:shadow-editorial ${
+                  index < 2 ? "lg:col-span-6" : "lg:col-span-4"
+                }`}
+                key={card.title}
+              >
+                <PlaceholderPanel label={card.title} tall={index < 2} accent={card.accent} caption={card.occasion} />
+                <div className="px-3 pb-4 pt-5">
+                  <p className="museum-label text-[0.62rem] text-champagne/65">{card.occasion}</p>
+                  <h3 className="mt-3 font-display text-4xl leading-none tracking-[-0.03em] text-pearl">{card.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-cream/62">{card.note}</p>
+                  <a href="#products" className="focus-ring mt-5 inline-flex rounded-full border border-champagne/30 px-5 py-3 text-xs font-bold uppercase tracking-[0.18em] text-champagne transition hover:bg-champagne hover:text-ink">
+                    {card.cta}
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="products" className="relative z-10 mx-auto max-w-7xl px-5 py-28 sm:px-8">
+        <SectionHeader
+          label="Catalogue presentation"
+          title="Product cards that feel like premium retail decisions, not social media captions."
+          description="Each card now carries product name, category, price, sizes, color note, styling note, trust-ready details, and WhatsApp inquiry action."
+          align="center"
+        />
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {productCards.map((product, index) => (
+            <ProductCard key={product.name} {...product} index={index + 1} />
+          ))}
         </div>
       </section>
 
@@ -205,6 +251,7 @@ export default function Home() {
                   <p className="museum-label text-[0.62rem] text-champagne/65">{collection.tag}</p>
                   <h3 className="mt-4 font-display text-3xl leading-none text-pearl">{collection.title}</h3>
                   <p className="mt-4 text-sm leading-6 text-cream/62">{collection.description}</p>
+                  <p className="mt-4 border-l border-champagne/30 pl-3 text-xs leading-5 text-cream/48">{collection.note}</p>
                 </article>
               ))}
             </div>
@@ -276,7 +323,7 @@ export default function Home() {
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Button href="mailto:hello@example.com?subject=Boutique%20Presence%20Review">Request a Preview</Button>
-            <Button href="#system" variant="secondary">See the Style System</Button>
+            <Button href="#lookbook" variant="secondary">See the Style System</Button>
           </div>
         </div>
       </section>
