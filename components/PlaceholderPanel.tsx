@@ -8,13 +8,13 @@ type PlaceholderPanelProps = {
 };
 
 const panelImages: Record<string, string> = {
-  "Signature Look": "/images/boutique/01-hero-campaign.png",
-  "Occasion Edit": "/images/boutique/02-occasion-edit.png",
-  "Modest Luxury": "/images/boutique/03-modest-luxury.png",
-  "Work & Church Elegance": "/images/boutique/04-work-church-elegance.png",
-  "Accessories Finish": "/images/boutique/05-accessories-finish.png",
-  "New Arrivals": "/images/boutique/06-new-arrivals-lookbook.png",
-  "Premium Collection": "/images/boutique/11-premium-collection.png",
+  "Signature Look": "/images/boutique-clean/01-hero-campaign.png",
+  "Occasion Edit": "/images/boutique-clean/02-occasion-edit.png",
+  "Modest Luxury": "/images/boutique-clean/03-modest-luxury.png",
+  "Work & Church Elegance": "/images/boutique-clean/04-work-church-elegance.png",
+  "Accessories Finish": "/images/boutique-clean/05-accessories-finish.png",
+  "New Arrivals": "/images/boutique-clean/06-new-arrivals-lookbook.png",
+  "Premium Collection": "/images/boutique-clean/11-premium-collection.png",
 };
 
 export function PlaceholderPanel({
@@ -24,7 +24,7 @@ export function PlaceholderPanel({
 }: PlaceholderPanelProps) {
   const imageSrc =
     label === "New Arrivals" && caption?.toLowerCase().includes("price")
-      ? "/images/boutique/10-new-arrivals-preview.png"
+      ? "/images/boutique-clean/10-new-arrivals-preview.png"
       : panelImages[label];
 
   return (

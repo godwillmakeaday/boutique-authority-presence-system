@@ -11,9 +11,9 @@ type ProductCardProps = {
 };
 
 const productImages: Record<string, string> = {
-  "The Pearl Set": "/images/boutique/07-pearl-set.png",
-  "Aurelia Dress": "/images/boutique/08-aurelia-dress.png",
-  "Goldline Accessories": "/images/boutique/09-goldline-accessories.png",
+  "The Pearl Set": "/images/boutique-clean/07-pearl-set.png",
+  "Aurelia Dress": "/images/boutique-clean/08-aurelia-dress.png",
+  "Goldline Accessories": "/images/boutique-clean/09-goldline-accessories.png",
 };
 
 export function ProductCard({
